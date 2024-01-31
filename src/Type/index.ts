@@ -1,17 +1,17 @@
-
 export type ItemType = {
-  detail: string,
-  id: number,
-  createTime: number,
-  deleteTime: null | number,
-  isShow: boolean,
-}
+  detail: string;
+  id: number;
+  createTime: number;
+  deleteTime: null | number;
+  completed: boolean;
+};
 
 export type ListType = ItemType[];
 
-export type AddItemFnType = (detail:string) => ItemType;
+export type AddItemFnType = (detail: string, isCompleted: boolean) => void;
 
-export type DelItemFnType = (id:string) => void;
+export type ItemCompleteFnType = (id: number) => void;
 
 export type AllCompletedFnType = () => void;
 
+export type ClearCompletedFnType = () => void;
